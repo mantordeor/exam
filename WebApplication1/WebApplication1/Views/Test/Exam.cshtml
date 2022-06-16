@@ -1,0 +1,21 @@
+﻿@model WebApplication1.ViewModels.ExamData
+@{
+    ViewBag.Title = "Exam";
+}
+
+<h3>音符查詢</h3>
+
+<p>
+    姓名 : 賴秉閎
+</p>
+<p>
+    學號 : 410954467
+</p>
+
+@using (Html.BeginForm("Exam","Test",FormMethod.Post))
+{
+    <p>姓名: @Html.TextBoxFor(m => m.Name)@Html.ValidationMessageFor(m => m.Name) </p>
+    <p>數字: @Html.TextBoxFor(m => m.Number)@Html.ValidationMessageFor(m => m.Number) </p>
+    <p>hi,@Model.NameMessage 查詢音符為:@Model.NumberMessage</p>
+    <input type="submit" name="name" value="查詢" />
+}
